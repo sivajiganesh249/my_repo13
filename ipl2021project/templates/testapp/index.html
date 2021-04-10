@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+     {%block body_block%}
+       <h1>SRH vs KKR MATCH NO:3 PREDICTION IN IPL2021</h1>  <hr>
+       <table border="3">
+         <thead>
+           <th>Player No</th>
+           <th>Player Name</th>
+           <th>Player's Exp Runs</th>
+           <th>Player's Exp Fours</th>
+           <th>Player's Exp Sixes</th>
+           <th>Actions</th>
+         </thead>
+         {% for play in players %}
+         <tr>
+           <td>{{play.pno}}</td>
+           <td>{{play.pname}}</td>
+           <td>{{play.pruns}}</td>
+           <td>{{play.pfours}}</td>
+           <td>{{play.psixes}}</td>
+           <td> <a href="/update/{{play.id}}">Update</a> <a href="/delete/{{play.id}}">Delete</a> </td>
+         </tr>
+         {%endfor%}
+       </table><br><br>
+       <a href="/create" class ='btn btn-success btn-lg'>Insert New Player</a>
+      {%endblock%}
